@@ -1,21 +1,24 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Layout from './components/Layout';
-import ModuleItem from './components/ModuleItem';
-import VideoPlayer from './components/VideoPlayer';
+import { Login } from './components/Login';
+import Home from './components/Home';
+import ProtectedRoute from './routes/ProtectedRoute';
 
 export const App = () => {
   return (
-    <Layout>
-      <div>
-        <Routes>
-          <Route path="/" element={<Layout />} />
-          <Route path="/video/:videoId" element={<ModuleItem />} />
-        </Routes>
-        <VideoPlayer />
-      </div>
-    </Layout>
+    <Routes>
+      <Route path="/" element={<Login />} />
+      <Route
+        path="/Home/*"
+        element={
+          <ProtectedRoute>
+            <Home />
+          </ProtectedRoute>
+        }
+      />
+    </Routes>
   );
 };
 
 export default App;
+

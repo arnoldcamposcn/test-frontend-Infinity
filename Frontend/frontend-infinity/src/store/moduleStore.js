@@ -20,7 +20,7 @@ const moduleStore = create((set) => ({
       set({ error: "Error", loading: false });
     }
   },
-  setSelectedVideo: (videoUrl) => set({ selectedVideo: videoUrl }), 
+  setSelectedVideo: (videoUrl) => set({ selectedVideo: videoUrl }),
 }));
 
 export default moduleStore;

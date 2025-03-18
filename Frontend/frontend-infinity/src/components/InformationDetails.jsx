@@ -28,10 +28,10 @@ export const InformationDetails = () => {
       </div>
       <div className="flex items-center mt-2 text-sm text-gray-500 pb-5">
         <a href="https://www.linkedin.com/in/klever-arnold-campos-crespin-1652a4286/" target="_blank" rel="noopener noreferrer">
-          Desarrollado por | Klever Arnold Campos Crespin   
+          Desarrollado por Klever Arnold Campos Crespin
         </a>
-        <a href="https://drive.google.com/file/d/128gwqJtGxJDTesjeF7bc6x1qeub36uxA/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-           | Imagen deployment
+        <a href="https://drive.google.com/file/d/1Db9tz0DKaP-rXknMSn3SdHEPY9bHO955/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+          | Imagen deployment
         </a>
       </div>
     </div>

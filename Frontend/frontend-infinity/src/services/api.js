@@ -1,16 +1,22 @@
-const API_URL = import.meta.env.VITE_API_URL;
-const API_KEY = import.meta.env.VITE_API_KEY;
-
 export const fetchModules = async () => {
-    try {
-        const response = await fetch(API_URL, {
-            headers: { Authorization: API_KEY },
-        });
-        if (!response.ok) throw new Error("Error al obtener los modulos");
-        return await response.json();
-        } catch (error) {
-        console.error("Error en fetchModules:", error);
-        return null;
-    }
-};
+  try {
+    const token = localStorage.getItem("token");
+    if (!token) throw new Error("No hay token disponible");
 
+    const response = await fetch("https://test-frontend-dev.onrender.com/api/modulos", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+    });
+
+    if (!response.ok) throw new Error("Error al obtener los módulos");
+
+    return await response.json().catch(() => {
+      throw new Error("Respuesta inválida del servidor");
+    });
+  } catch (error) {
+    console.error("Error en fetchModules:", error);
+    return null;
+  }
+};
